@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { Plane, Mail, Lock, User } from 'lucide-react'
 
 export default function SignUp() {

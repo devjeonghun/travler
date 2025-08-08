@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'next/navigation'
+import Link from 'next/link'
 import { Plane, Calendar, MapPin, Users, Plus, CheckSquare } from 'lucide-react'
 import { format } from 'date-fns'
 
