@@ -137,9 +137,9 @@ export default function SignUp() {
           </div>
 
           <div className="mt-6 text-center">
-            <a href="/" className="text-gray-500 hover:text-gray-700">
+            <Link href="/" className="text-gray-500 hover:text-gray-700">
               홈으로 돌아가기
-            </a>
+            </Link>
           </div>
         </div>
       </div>

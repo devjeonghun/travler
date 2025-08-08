@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Plane, Users, CheckSquare, MapPin, Calendar } from 'lucide-react'
+import { Plane, Users, CheckSquare, MapPin } from 'lucide-react'
 
 export default function Home() {
   return (

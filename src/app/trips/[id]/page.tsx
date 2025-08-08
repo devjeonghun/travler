@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'next/navigation'
 import { Plane, Calendar, MapPin, Users, Plus, CheckSquare } from 'lucide-react'
 import { format } from 'date-fns'
@@ -43,9 +43,9 @@ export default function TripDetail() {
 
   useEffect(() => {
     fetchTrip()
-  }, [params.id])
+  }, [params.id, fetchTrip])
 
-  const fetchTrip = async () => {
+  const fetchTrip = useCallback(async () => {
     try {
       const response = await fetch(`/api/trips/${params.id}`)
       if (response.ok) {
@@ -57,7 +57,7 @@ export default function TripDetail() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [params.id])
 
   const createChecklist = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -138,9 +138,9 @@ export default function TripDetail() {
               <h1 className="ml-2 text-2xl font-bold text-gray-900">Travle</h1>
             </div>
             <nav className="flex space-x-8">
-              <a href="/" className="text-gray-600 hover:text-gray-900">
+              <Link href="/" className="text-gray-600 hover:text-gray-900">
                 홈으로
-              </a>
+              </Link>
             </nav>
           </div>
         </div>

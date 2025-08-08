@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Plane, Calendar, MapPin, Users } from 'lucide-react'
+import { Plane, Calendar, MapPin } from 'lucide-react'
 
 export default function CreateTrip() {
   const router = useRouter()
@@ -57,9 +57,9 @@ export default function CreateTrip() {
               <h1 className="ml-2 text-2xl font-bold text-gray-900">Travle</h1>
             </div>
             <nav className="flex space-x-8">
-              <a href="/" className="text-gray-600 hover:text-gray-900">
+              <Link href="/" className="text-gray-600 hover:text-gray-900">
                 홈으로
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
