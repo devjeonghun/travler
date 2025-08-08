@@ -42,10 +42,6 @@ export default function TripDetail() {
   const [newChecklistName, setNewChecklistName] = useState('')
   const [showNewChecklistForm, setShowNewChecklistForm] = useState(false)
 
-  useEffect(() => {
-    fetchTrip()
-  }, [params.id, fetchTrip])
-
   const fetchTrip = useCallback(async () => {
     try {
       const response = await fetch(`/api/trips/${params.id}`)
@@ -59,6 +55,10 @@ export default function TripDetail() {
       setLoading(false)
     }
   }, [params.id])
+
+  useEffect(() => {
+    fetchTrip()
+  }, [fetchTrip])
 
   const createChecklist = async (e: React.FormEvent) => {
     e.preventDefault()

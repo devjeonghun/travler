@@ -3,15 +3,16 @@ import { prisma } from '@/lib/prisma'
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params
   try {
     const body = await request.json()
     const { isCompleted } = body
 
     const checklistItem = await prisma.checklistItem.update({
       where: {
-        id: params.id
+        id: id
       },
       data: {
         isCompleted
